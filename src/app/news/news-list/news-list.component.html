@@ -1,0 +1,39 @@
+<b>Recent NEWS:</b><br>
+<div *ngIf="newsList">
+	<div class="list-group" *ngFor="let news of newsList">
+		<div *ngIf="designerId !== news.uploadedByDesigner">
+		  <div class="list-group-item list-group-item-action" style="border: none;"
+		  [routerLink]="['/news', news.newsId]">
+		    <div class="d-flex justify-content-between">
+		      <h6 class="mb-1">{{news.headline}}</h6>
+		      <small>{{news.uploadedDate}}</small>
+		    </div>
+		    <p class="mb-1"><a style="cursor: pointer;">{{news.sourceLink}}</a></p>
+		  </div>
+	  	</div>
+	</div>
+</div>
+
+<br>
+<b>NEWS added by you: </b>
+<br>
+<div *ngIf="newsList">
+	<div class="list-group" *ngFor="let news of newsList">
+		<div *ngIf="designerId === news.uploadedByDesigner">
+		  <div class="list-group-item list-group-item-action" style="border:none;  cursor: pointer;" 
+		  [routerLink]="['/news', news.newsId]">
+		    <div class="d-flex justify-content-between">
+		      <h6 class="mb-1">{{news.headline}}</h6>
+		      <small>{{news.uploadedDate}}</small>
+		    </div>
+		    <p class="mb-1"><a style="cursor: pointer;">{{news.sourceLink}}</a></p>
+		  	</div>
+	  		  <div>
+  				<button class="btn" style="background-color: #eae7dc; color: #e98074; " type="button" 
+  				(click)="editNews(news.newsId)" *ngIf="!test">Edit</button> &nbsp;&nbsp;
+  				<button class="btn" style="background-color: #eae7dc; color: #e98074; " type="button" 
+  				(click)="deleteNews(news.newsId)" *ngIf="!test">Delete</button>
+	 		</div>  		
+	  	</div>
+	 </div>
+</div>

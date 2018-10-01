@@ -1,0 +1,32 @@
+<div class="row" *ngIf="designer && !viewFullProfile">
+	<div class="col-sm-3">
+		<img [src]="designer.profilePicURL" style="width: 150px; height: 150px; height: 100px; width: 100px;">
+	</div>
+	<div class="col-sm-9">
+		{{designer.firstName}} &nbsp; {{designer.lastName}}
+		<br>
+		{{designer.socMediaLink}}
+		<br> 
+		{{designer.state}}, {{designer.country}}
+		<br>
+		{{designer.aboutMe}}
+		<br>
+			<a [routerLink] = "['/designer-profile', designer.designerId, 'true']"> Click here to view complete profile</a>
+	</div>
+</div>
+<div class="row" *ngIf="designer && viewFullProfile">
+	<div class="col-sm-3">
+		<img [src]="designer.profilePicURL" style="width: 150px; height: 150px; height: 100px; width: 100px;">
+	</div>
+	<div class="col-sm-9">
+		{{designer.firstName}} &nbsp; {{designer.lastName}}
+		<br>
+		{{designer.socMediaLink}}
+		<br> 
+		{{designer.state}}, {{designer.country}}
+		<br>
+		{{designer.aboutMe}}
+		<br>			
+	</div>
+</div>
+ 

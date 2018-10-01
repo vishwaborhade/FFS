@@ -1,0 +1,59 @@
+<div class="row">
+	<div class="col-12">		
+		<form (ngSubmit)="modifyEvent(f)" #f="ngForm">
+			<div class="form-row">
+				<div class="form-group col-12">
+					<input class="form-control" type="text" id="eventId" name="eventId" [ngModel]="defaultEventId" #eventId="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="eventName">Event name:</label>
+					<input class="form-control" type="text" id="eventName" name="eventName" [ngModel]="defaultEventName" required #eventName="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="eventImg">Event Image:</label>
+					<input class="form-control" type="text" id="eventImg" name="eventImg" [ngModel]="defaultEventImg" #eventImg="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="eventType">Event Type:</label>
+					<input class="form-control" type="text" id="eventType" name="eventType" [ngModel]="defaultEventType" required #eventType="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="location">Location:</label>
+					<input class="form-control" type="text" id="location" name="location" [ngModel]="defaultLocation" required #location="ngModel">
+				</div>
+				<div class="form-group col-12">
+					<label class="control-label" for="desc">Event Detail/Description:</label>
+					<textarea id="desc" name="desc" [ngModel]="defaultDesc" required #desc="ngModel" style="width: 100%;"></textarea>
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="eventDate">Date on:</label>
+					<input class="form-control" type="text" id="eventDate" name="eventDate" [ngModel]="defaultEventDate" required #eventDate="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="location">Location:</label>
+					<input class="form-control" type="text" id="location" name="location" [ngModel]="defaultLocation" required #location="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="organizerName">Organizer:</label>
+					<input class="form-control" type="text" id="organizerName" name="organizerName" [ngModel]="defaultOrganizerName" required #organizerName="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="contactOrgnizer">Contact no.:</label>
+					<input class="form-control" type="text" id="contactOrgnizer" name="contactOrgnizer" [ngModel]="defaultOrgnizerContact" required #contactOrgnizer="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="entryFees">Entry Fees:</label>
+					<input class="form-control" type="text" id="entryFees" name="entryFees" [ngModel]="defaultEntryFees" required #entryFees="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="noteFromOrganizer">Note from Organizer:</label>
+					<input class="form-control" type="text" id="noteFromOrganizer" name="noteFromOrganizer" [ngModel]="defaultNoteFromOrganizer" required #noteFromOrganizer="ngModel">
+				</div>
+				<div class="form-group col-12" aling="center">
+					<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="submit" [disabled]="!f.valid">Save</button>
+					<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="button" (click)="onCancel()">Cancel</button>				
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-12">
+	<form (ngSubmit)="searchDesing(f)" #f="ngForm">
+		<div>		
+			<input type="text" id="searchTxt" name="searchTxt" ngModel style="width: 70%;"> &nbsp;
+			<button class="btn" style="background-color: #eae7dc; color: #e98074; " type="submit">Search</button> &nbsp; 
+			<a style="background-color: #eae7dc; color: #e98074; border-bottom-style: solid;" (click)="setAdvSrch()">Advanced Search</a>
+		</div>
+	
+		<div *ngIf="isAdvSrch" ngModelGroup="searchCheck">
+			Category: 
+			<input type="checkbox" id="designerChk" name="searchOpt" ng-model="formData.searchOpt.designer"> Designer
+			<input type="checkbox" id="designChk" name="searchOpt" ng-model="formData.searchOpt.design"> All Design
+			<input type="checkbox" id="designByMeChk" name="searchOpt" ng-model="formData.searchOpt.myDesign"> Design only added by me 
+			<input type="checkbox" id="eventChk" name="searchOpt" ng-model="formData.searchOpt.event"> Event
+			<input type="checkbox" id="eventNearChk" name="searchOpt" ng-model="formData.searchOpt.myEvent"> Event only near by me
+			<input type="checkbox" id="newsChk" name="searchOpt" ng-model="formData.searchOpt.news"> News
+			<input type="checkbox" id="blogChk" name="searchOpt" ng-model="formData.searchOpt.blog"> Blog
+		</div>
+	</form>
+	</div>
+</div>
+

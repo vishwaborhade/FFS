@@ -1,0 +1,192 @@
+<div class= "row">
+	<div>Welcome Designer!</div>
+	<div class="col-12">
+		<form (ngSubmit)="onRegister(f)" #f="ngForm">
+			<label class="control-label">Select registration option: </label>
+			<div class="form-check form-check-inline">
+				<input type="radio" class="form-check-input"  id="userType1" name="userType" value="individual" [(ngModel)]="userType" required>
+				<label class="form-check-label" for="userType1">Individual</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input type="radio" class="form-check-input" id="userType2" name="userType" value="merchandise" [(ngModel)]="userType" required>
+				<label class="form-check-label" for="userType2">Merchandise	</label>
+			</div>
+			
+			<div *ngIf="userType == 'merchandise'">
+				<label class="control-label">Merchandise Detail:</label>
+				<div class="form-row">
+					<div class="col-lg-8 col-md-8 col-sm-12">
+						<label for="businessName">Business Name: </label>
+						<input class="form-control" type="text" id="businessName" name="businessName" ngModel required #businessName="ngModel">
+						<span class="help-block" style="color: red" *ngIf="businessName.value == '' && businessName.touched">Please enter Business name.</span>
+					</div>
+					<div class="col-sm-12 col-lg-8 col-md-8">
+						<label for="businessDetail"> Business Area Detail: </label>
+						<textarea class="form-control" rows="3" cols="10" name="businessDetail" id="businessDetail" ngModel required #businessDetail="ngModel"></textarea>
+						<span class="help-block" style="color: red" *ngIf="businessDetail.value == '' && businessDetail.touched">Please enter Business name.</span>
+					</div>
+					
+					<div class="col-sm-12 col-lg-8 col-md-8">
+						<label class="control-label">Are you alone owner? &nbsp;</label>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" id="ownerType1" name="ownerType" value="Individual" ngModel required>
+							<label class="form-check-label" for="ownerType1"> Yes </label>
+						</div>
+						<div class="form-check form-check-inline">
+							<input class="form-check-input" type="radio" id="ownerType2" name="ownerType" value="Partners" ngModel required>
+							<label class="form-check-label" for="ownerType2"> No </label>
+						</div>
+					</div>
+				</div>
+			</div>	
+			
+			<div *ngIf="userType == 'individual' || userType == 'merchandise' ">
+				<div class="form-row">
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+						<label for="firstName"> First Name: </label>
+						<input class="form-control" type="text" name="firstName" id="firstName" ngModel required #firstName="ngModel">
+						<span class="help-block" style="color: red" *ngIf="firstName.value == '' && firstName.touched">Please enter First name.</span>
+					</div>
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+						<label for="lastName"> Last Name: </label> 
+				 		<input class="form-control" type="text" name="lastName" id="lastName" ngModel required #lastName="ngModel">
+				 		<span class="help-block" style="color: red" *ngIf="lastName.value == '' && lastName.touched">Please enter Last name.</span>
+					</div>
+			 	</div>
+		 	
+			 	<label class="control-label"> Contact Detail:</label>
+			 	<div class="form-row">
+			 		<div class="form-group col-sm-12 col-md-4 col-lg-4">
+			 			<label for="address1"> Address: </label>
+			 			<input class="form-control" type="text" name="address1" id="address1" ngModel required #address1="ngModel">
+			 			<span class="help-block" style="color: red" *ngIf="address1.value == '' && address1.touched">Please enter Address.</span>
+			 		</div>
+			 		<div class="form-group col-sm-12 col-md-4 col-lg-4">
+			 			<label for="address2"> Address2: </label>
+			 			<input class="form-control" type="text" name="address2" id="address2" ngModel>
+			 		</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+						<label for="city"> City: </label>
+						<input class="form-control" type="text" name="city" id="city" ngModel required #city="ngModel">
+						<span class="help-block" style="color: red" *ngIf="city.value == '' && city.touched">Please enter City.</span>
+					</div>
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+						<label for="state"> State: </label>
+						<input class="form-control" type="text" name="state" id="state" ngModel required #state="ngModel">
+						<span class="help-block" style="color: red" *ngIf="state.value == '' && state.touched">Please enter State.</span>
+					</div>
+				</div>			
+				<div class="form-row">
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+						<label for="country"> Country: </label>
+						<input class="form-control" type="text" name="country" id="country" ngModel required #country="ngModel">
+						<span class="help-block" style="color: red" *ngIf="country.value == '' && country.touched">Please enter Country.</span>
+					</div>
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+						<label for="zipCode"> Zip code: </label>
+						<input class="form-control" type="text" name="zipCode" id="zipCode" ngModel required #zipCode="ngModel">
+						<span class="help-block" style="color: red" *ngIf="zipCode.value == '' && zipCode.touched">Please enter Zipe code.</span>
+					</div>
+				</div>		
+				
+				<div class="form-row">
+			 		<div class="form-group col-sm-12 col-md-4 col-lg-4">
+			 			<label for="contactNum1"> Contact No.: </label>
+			 			<input class="form-control" type="text" name="contactNum1" id="contactNum1" ngModel required #contactNum1="ngModel">
+			 			<span class="help-block" style="color: red" *ngIf="contactNum1.value == '' && contactNum1.touched">Please enter contact number.</span>
+			 		</div>
+			 		<div class="form-group col-sm-12 col-md-4 col-lg-4">
+			 			<label for="contactNum2"> Alternate Contact No.: </label>
+			 			<input class="form-control" type="text" name="contactNum2" id="contactNum2" ngModel>
+			 		</div>
+				</div>
+				<div class="form-row">
+					<div class="col-lg-8 col-md-8 col-sm-12">
+						<label for="email">Email: </label>
+						<input class="form-control" type="email" name="email" id="email" ngModel required #email="ngModel">
+						<span class="help-block" style="color: red" *ngIf="email.value == '' && email.touched">Please enter Email address.</span>
+					</div>
+				</div>
+				
+				<label class="control-label"> Designer Background detail: </label> 
+				<div class="form-row">
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+			 			<label for="qualification"> Qualification: </label>
+			 			<input class="form-control" type="text" id="qualification" name="qualification" ngModel>
+			 		</div>
+			 		<div class="form-group col-sm-12 col-md-4 col-lg-4">
+			 			<label for="course"> Any Other Qualification: </label>
+			 			<input class="form-control" type="text" name="course" id="course" ngModel>
+			 		</div> 
+			 	</div>
+			 	<div class="form-row">
+					<div class="col-lg-8 col-md-8">
+						<label for="expertise"> Expertise: </label>
+						<textarea class="form-control" rows="3" cols="10" name="expertise" id="expertise" ngModel></textarea>
+					</div>
+				</div>
+			 	<div class="form-row">
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+			 			<label for="experience"> Experience: </label>
+			 			<input class="form-control" type="text" name="experience" id="experience" ngModel>
+			 		</div> 
+			 		<div class="form-group col-sm-12 col-md-4 col-lg-4">
+			 			<label for="skillLevel"> Skill Level: </label>
+			 			<input class="form-control" type="text" name="skillLevel" id="skillLevel" ngModel>
+			 		</div> 
+			 	</div>
+			 	
+			 	<label class="control-label"> Other Information: </label> 
+			 	<div class="form-row">
+					<div class="col-lg-8 col-md-8">
+						<label for="aboutMe"> About me:  </label>
+						<textarea class="form-control" rows="3" cols="10" name="aboutMe" id="aboutMe" ngModel></textarea>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="col-lg-8 col-md-8 col-sm-12">
+						<label for="socMediaLink"> Are you on Social Media Link or have personal web site? Please share here:</label>
+						<input class="form-control" type="text" name="socMediaLink" id="socMediaLink" ngModel>
+					</div>
+				</div>
+				
+				<label class="control-label">Designer Login Detail: </label>
+				<div class="form-row">
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+						<label for="userName">Designer ID:</label>
+						<input class="form-control" type="text" id="userName" name="userName" ngModel required #userName="ngModel">
+						<span class="help-block" style="color: red" *ngIf="userName.value == '' && userName.touched">Please enter Designer ID.</span>
+						<span class="help-block" style="color: red">{{ designerUsrNmErr }}</span>
+					</div>
+					<div class="form-group col-sm-12 col-md-4 col-lg-4">
+						<label for="password">Password:</label> 
+				 		<input class="form-control" type="password" id="password" name="password" ngModel required #password="ngModel">
+				 		<span class="help-block" style="color: red" *ngIf="password.value == '' && password.touched">Please enter password.</span>
+					</div>
+					<div class="form-row">
+						<div class=" form-group col-lg-8 col-md-8">
+							<label for="seqQuestion">Select Security Question:</label>
+							<select class="custom-select" id="seqQuestion" name="seqQuestion" ngModel required #seqQuestion="ngModel">
+								<option></option>
+								<option>Which city you born?</option>
+								<option>What is capital on your country?</option>
+							</select>
+							<span class="help-block" style="color: red" *ngIf="seqQuestion.value == '' && seqQuestion.touched">Please enter security question.</span>
+						</div>
+						<div class=" form-group col-lg-8 col-md-8">
+							<input class="form-control" type="text" id="seqAnswer" name="seqAnswer" ngModel required #seqAnswer="ngModel">
+							<span class="help-block" style="color: red" *ngIf="seqAnswer.value == '' && seqAnswer.touched">Please enter security answer.</span>
+						</div>
+					</div>
+				</div>
+			 </div>
+			 <div align="center" class="col-sm-12 col-md-8 col-lg-8">
+			 		<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="submit" [disabled]="!f.valid">Register</button>
+					<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="reset">Reset</button>
+					<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="button" (click)="onCancel()">Cancel</button>
+			 </div>
+		</form>
+	</div>
+</div>

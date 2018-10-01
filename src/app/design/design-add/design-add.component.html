@@ -1,0 +1,92 @@
+<div class= "row">
+	<div>Please enter all the detail to add design.</div>
+	<div class="col-12">
+		<form (ngSubmit)="addDesign(f)" #f="ngForm">
+		<div class="col-8">
+			<div class="form-group">
+				<label for="designId"> DesigneID: </label>
+				<input class="form-control" type="text" name="designId" id="designId" ngModel required #designId="ngModel">
+				<span class="help-block" style="color: red" *ngIf="designId.value == '' && designId.touched">Please enter Design Id start with D.</span>
+			</div>
+   
+			<div class="form-group">
+				<label for="designName"> Design Name: </label> 
+			 	<input class="form-control" type="text" name="designName" id="designName" ngModel required #designName="ngModel">
+			 	<span class="help-block" style="color: red" *ngIf="designName.value == '' && designName.touched">Please enter Design name.</span>
+			</div>
+
+	 		<div class="form-group">
+				<label for="description"> Description:  </label>
+				<textarea class="form-control" rows="3" cols="10" name="description" id="description" ngModel required #description="ngModel"></textarea>
+				<span class="help-block" style="color: red" *ngIf="description.value == '' && description.touched">Please enter Design description.</span>
+			</div>
+			<div class="form-group">
+				<label for="style"> Design Style: </label> 
+				<input class="form-control" type="text" name="style" id="style" ngModel required #style="ngModel">
+				<span class="help-block" style="color: red" *ngIf="style.value == '' && style.touched">Please enter Design style.</span>
+			</div>
+			<div class="form-group">
+				<label for="style"> Design Style: </label> 
+				<input class="form-control" type="text" name="style" id="style" ngModel required #style="ngModel">
+				<span class="help-block" style="color: red" *ngIf="style.value == '' && style.touched">Please enter Design style.</span>
+			</div>				
+			<div class="form-check">
+				<label class="control-label">Gender: &nbsp;</label>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" id="gender1" name="gender" value="Male" ngModel required>
+					<label class="form-check-label" for="gender1"> Male </label>
+				</div>
+				<div class="form-check form-check-inline">
+					<input class="form-check-input" type="radio" id="gender2" name="gender" value="Female" ngModel required>
+					<label class="form-check-label" for="gender2"> Female </label>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="color"> Design Color: </label> 
+				<input class="form-control" type="text" name="color" id="color" ngModel required #color="ngModel">
+				<span class="help-block" style="color: red" *ngIf="color.value == '' && color.touched">Please enter Design color.</span>
+			</div>		 	
+	 		<div class="form-group">
+				<label for="occasion"> Design for Occasion: </label> 
+				<input class="form-control" type="text" name="occasion" id="occasion" ngModel required #occasion="ngModel">
+				<span class="help-block" style="color: red" *ngIf="occasion.value == '' && occasion.touched">Please enter occasion for Design.</span>
+			</div>
+   			<div class="form-group">
+				<label for="designType"> Design Type: </label> 
+				<input class="form-control" type="text" name="designType" id="designType" ngModel required #designType="ngModel">
+				<span class="help-block" style="color: red" *ngIf="designType.value == '' && designType.touched">Please enter Design name.</span>
+			</div>
+			<div class="form-group">
+				<label for="fabrics"> Type of Fabrics: </label> 
+				<input class="form-control" type="text" name="fabrics" id="fabrics" ngModel required #fabrics="ngModel">
+				<span class="help-block" style="color: red" *ngIf="fabrics.value == '' && fabrics.touched">Please enter fabrics used in design.</span>
+			</div>
+			<div class="form-group">
+				<label for="pattern"> Design Pattern: </label> 
+				<input class="form-control" type="text" name="pattern" id="pattern" ngModel required #pattern="ngModel">
+				<span class="help-block" style="color: red" *ngIf="pattern.value == '' && pattern.touched">Please enter Design Pattern.</span>
+			</div>
+			<div class="form-group">
+				<label for="season"> Season to wear it: </label> 
+				<input class="form-control" type="text" name="season" id="season" ngModel required #season="ngModel">
+				<span class="help-block" style="color: red" *ngIf="season.value == '' && season.touched">Please enter Season.</span>
+			</div>
+			<div class="form-group">
+				<label for="care"> Design Care: </label> 
+				<input class="form-control" type="text" name="care" id="care" ngModel required #care="ngModel">
+				<span class="help-block" style="color: red" *ngIf="care.value == '' && care.touched">Please enter Design care.</span>
+			</div>
+			<div class="form-group">
+				<label for="availCountry"> Available in Countries: </label> 
+				<input class="form-control" type="text" name="availCountry" id="availCountry" ngModel required #availCountry="ngModel">
+				<span class="help-block" style="color: red" *ngIf="availCountry.value == '' && availCountry.touched">Please enter available countries.</span>
+			</div>
+   		
+			<div align="center" class="col-sm-12 col-md-8 col-lg-8">
+				<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="submit" [disabled]="!f.valid">Save</button>
+				<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="reset">Reset</button>
+			</div>
+		</div>
+		</form>
+	</div>
+</div>

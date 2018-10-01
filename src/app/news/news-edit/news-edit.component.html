@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="col-12">		
+		<form (ngSubmit)="modifyNews(f)" #f="ngForm">
+			<div class="form-row">
+				<div class="form-group col-12">
+					<input class="form-control" type="text" id="newsId" name="newsId" [ngModel]="tempNewsId" #newsId="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="headline">News Headline:</label>
+					<input class="form-control" type="text" id="headline" name="headline" [ngModel]="tempHeadline" required #headline="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="sourceLink">News Link:</label>
+					<input class="form-control" type="text" id="sourceLink" name="sourceLink" [ngModel]="tempSourceLink" #sourceLink="ngModel">
+				</div>
+				<div class="form-group col-6">
+					<label class="control-label" for="publisher">News Publisher:</label>
+					<input class="form-control" type="text" id="publisher" name="publisher" [ngModel]="tempPublisher" required #publisher="ngModel">
+				</div>
+				<div class="form-group col-12" aling="center">
+					<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="submit" [disabled]="!f.valid">Save</button>
+					<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="button" (click)="onCancel()">Cancel</button>				
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

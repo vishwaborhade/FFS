@@ -1,0 +1,12 @@
+<div class="row">
+	<div class="col-12">
+		<app-design-list test="{{test}}"></app-design-list>
+	</div>
+	<div class="col-12" *ngIf="test == 'popularDesigns'" >
+		Let's add new design. &nbsp;&nbsp;
+		<button class="btn pull-right" style="background-color: #eae7dc; color: #e98074; " type="button" (click)="addDesign()">Add Design</button>
+	</div>
+	<div class="col-12" *ngIf="test == 'popularDesigns'" align="right">
+		<button class="btn" style="background-color: #eae7dc; color: #e98074; " type="button" (click)="showDesigns()">Show All Design</button>
+	</div>
+</div>

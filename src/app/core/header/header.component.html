@@ -1,0 +1,43 @@
+<nav class="navbar navbar-default"  style="background-color: #eae7dc;">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<img src="./assets/FFS_Logo.jpg" style="height: 10%;">
+			<a href="#" class="navbar-brand" style="color: #e98074; font-family: Bodoni MT; font-size: 30px; font-weight:bold;">Fashion's Final Stop</a>
+		</div>
+	</div>
+</nav>
+<div>
+	<ul class="navbar navbar-expand-sm" style="list-style-type: none; ">
+		<li class="nav-item" routerLinkActive="active" > 
+			<a class="nav-link" style="color: #e98074; font-family: Book Antiqua;" routerLink="howItsWork">How it works?</a> 
+		</li> 
+		<li  class="nav-item" routerLinkActive="active" >
+			<a class="nav-link" style="color: #e98074; font-family: Book Antiqua; cursor: pointer;" (click)="navigate()"> Home</a>
+		</li>
+		<li class="nav-item" routerLinkActive="active" > 
+			<a class="nav-link" style="color: #e98074; font-family: Book Antiqua;" routerLink="aboutUs"> About us </a> 
+		</li>
+		<li class="nav-item" routerLinkActive="active" > 
+			<a class="nav-link" style="color: #e98074; font-family: Book Antiqua;" routerLink="contactUs"> Contact us </a> 
+		</li> 
+		<li class="nav-item" routerLinkActive="active" > 
+			<a class="nav-link" style="color: #e98074; font-family: Book Antiqua;" routerLink="signIn"> Sign In </a>  
+		</li> 
+		<li class="nav-item" routerLinkActive="active" > 
+			<a class="nav-link" style="color: #e98074; font-family: Book Antiqua;" routerLink="termCondition"> Sign up </a>  
+		</li> 
+		<li class="nav-item" routerLinkActive="active" >
+			<a routerLink="/notifications"><app-notification></app-notification></a>
+		</li>
+		<li class="nav-item" routerLinkActive="active" >
+			<a routerLink="/messages"><app-message></app-message></a>
+		</li>
+		<li class="nav-item" routerLinkActive="active" >
+			<a routerLink="/pwd-mgmt"><img src="./assets/mg_pwd_img.jpg" alt="Smiley face" width="30" height="30" alt="Manage Password"></a>
+		</li>
+		<li class="nav-item" routerLinkActive="active">
+			<a (click)="logout()" style="cursor: pointer;"><img src="./assets/logout_img.JPG" alt="Smiley face" width="30" height="30" alt="Logout"></a>
+		</li>
+	</ul>
+</div>
+<hr style="border-width: 2px; border-color: #e98074; color: #e98074;">

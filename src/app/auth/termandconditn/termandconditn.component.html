@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-sm-12">
+	<p>
+	  Terms & Conditions:
+	  
+	  Below are the terms and Condition to access this application:
+	</p>
+	</div>
+	  <li>
+	  	<ul> This application is desinged for Fashion Designer.	</ul>
+	  </li> 
+	  <br>
+	<div class="col-sm-12">
+		<form (ngSubmit)="continueToSignUp()" #f="ngForm">
+			<div class="radio">
+				<label>
+					<input type="radio" name="acceptance" value="yes" [(ngModel)]="accSelected" required> I accept terms and conditions.<br>
+				</label><br>
+				<label>
+		  			<input type="radio" name="acceptance" value="no" [(ngModel)]="accSelected" required> I do not accept terms and conditions.<br>
+		  		</label>
+			</div>
+			<div>
+				<span class="help-block" style="color: red"> {{ userMsg }}</span>
+			</div>
+			<div align="right">
+				<button type="submit" class="btn" style="background-color: #eae7dc; color: #e98074;" [disabled]="!f.valid"> Continue</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<button type="button" class="btn" style="background-color: #eae7dc; color: #e98074; " (click)="onCancel()">Cancel</button>
+			</div>
+		</form>
+	</div>
+</div>

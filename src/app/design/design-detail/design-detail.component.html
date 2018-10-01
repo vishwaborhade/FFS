@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="col-sm-6">
+		<img alt="Vishwanath Borhade" src="./assets/t-shirt.jpg" style="width: 150px; height: 150px;">
+	</div>
+	<div class="col-sm-6">
+		Design Name: {{design.designName}}
+		<br>
+		Design Description: {{design.description}} 
+		<br> 
+		Designer: {{ design.designerName}}
+		<br>
+		<a [routerLink] = "['/designer-profile', design.designerId]"> More about Designer </a>
+		<br>
+	</div>
+</div>

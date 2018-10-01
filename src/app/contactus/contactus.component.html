@@ -1,0 +1,41 @@
+<div class="row">
+	<div class="col-sm-12" style="text-align: left;"> Get in touch!</div>
+	<div class="col-sm-12 col-md-6 col-lg-6">
+		<img src="./assets/contact_us.jpg">
+	</div>
+	<div class="col-sm-12 col-md-6 col-lg-6">
+		<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+			<div class="form-row">
+				<div class="col-8">
+					<label for="contactName">Your Name: </label>
+					<input class="form-control" type="text" id="contactName" name="contactName" ngModel required #contactName="ngModel">
+					<span class="help-block" style="color: red" *ngIf="contactName.value == '' && contactName.touched">Please enter your name.</span>
+				</div>
+				<div class="col-8">
+					<label for="contactEmail">Your Email address: </label>
+					<input class="form-control" type="text" id="contactEmail" name="contactEmail" ngModel required #contactEmail="ngModel">
+					<span class="help-block" style="color: red" *ngIf="contactEmail.value == '' && contactEmail.touched">Please enter your email address.</span>
+				</div>
+				<div class="col-8">
+					<label for="contactNo">Your Contact No.: </label>
+					<input class="form-control" type="text" id="contactNo" name="contactNo" ngModel required #contactNo="ngModel">
+					<span class="help-block" style="color: red" *ngIf="contactNo.value == '' && contactNo.touched">Please enter your contact number.</span>
+				</div>
+				<div class="col-8">
+					<label for="contactSub">Subject Line: </label>
+					<input class="form-control" type="text" id="contactSub" name="contactSub" ngModel required #contactSub="ngModel">
+					<span class="help-block" style="color: red" *ngIf="contactSub.value == '' && contactSub.touched">Please enter subject line.</span>
+				</div>
+				<div class="col-12">
+					<label for="contactMsg"> Message: </label>
+					<textarea class="form-control" rows="3" cols="10" name="contactMsg" id="contactMsg" ngModel required #contactMsg="ngModel"></textarea>
+					<span class="help-block" style="color: red" *ngIf="contactMsg.value == '' && contactMsg.touched">Please enter message.</span>
+				</div>
+				<div class="col-12" align="left" style="margin-top: 10px;'">
+			 		<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="submit" [disabled]="!f.valid">Register</button>
+					<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="button" (click)="onCancel()">Cancel</button>
+				</div>
+			 </div>
+		</form>
+	</div>
+</div>

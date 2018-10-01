@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-sm-3">
+ 			Welcome {{firstName}}!
+ 	</div>
+ 	<div class="col-sm-9">
+ 			<app-search-engine></app-search-engine>
+ 	</div>
+	<div class="col-12">
+	 	<b>Designer Profile:</b> 
+ 	</div>
+	<div class="col-sm-12">
+		<app-designer-profile></app-designer-profile>
+	</div>
+	<div class="col-sm-6">
+		<b>Recently Added Design:</b><br>
+			<app-design test="recentDesigns"></app-design>
+	</div>
+	<div class="col-sm-6">
+		<b>Mostly Popular Design:</b><br>
+		<app-design test="popularDesigns"></app-design>				
+	</div>
+	<div class="col-sm-6">		
+		<app-news></app-news>
+	</div>
+	<div class="col-sm-6">
+		<app-event></app-event><br>
+	</div>
+	<div class="col-sm-12">
+		<app-designer-list></app-designer-list>
+	</div>
+</div>
+
+

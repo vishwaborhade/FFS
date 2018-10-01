@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="login-box col-xs-8 col-sm-6 col-md-4 col-sm-offset-1 col-md-offset-2">
+		Have an account? 
+		<form (ngSubmit)="onSignin(f)" #f="ngForm">
+			<span class="help-block" style="color: red">{{wrongUserIDPwd}}</span>
+			<div class="form-group">
+				<input type="text" id="userName" name="userName" class="form-control" placeHolder="Designer Login ID" ngModel required #userName="ngModel">
+				<span class="help-block" style="color: red" *ngIf="userName.value == '' && userName.touched">Please enter designer ID.</span>
+			</div>
+			
+			<div class="form-group">
+				<input type="password" id="password" name="password" class="form-control" placeHolder="Designer Password" ngModel required #password="ngModel">
+				<span class="help-block" style="color: red" *ngIf="password.value == '' && password.touched">Please enter password.</span>
+			</div>
+			
+			<div class="form-check">
+    			<input type="checkbox" class="form-check-input" id="rememberMe">
+    			<label class="form-check-label" for="rememberMe">Remember me</label>
+  			</div>
+			<div>
+				<a href="/">Forgot Password</a>
+			</div>
+			<button class="btn" style="background-color: #eae7dc; color: #e98074; " type="submit" [disabled]="!f.valid">Get started</button>
+		</form>
+	</div>
+</div>
+

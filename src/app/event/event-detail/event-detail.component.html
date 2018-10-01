@@ -1,0 +1,39 @@
+<div class="row">
+	<div class="col-sm-6">
+		{{event.eventName}}
+		<br>
+		<small>{{event.location}}</small>
+	</div>
+	<div class="col-sm-12">
+		{{event.desc}}
+	</div>
+</div>
+<div>
+	<div>List of near by event or similar event/Other Events You May Like </div>
+	<div>Google Map/View Map</div>
+	<div>
+		<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="button">
+			Add to Calendar
+		</button>
+	</div>
+</div>
+<div>
+	Event Organizer: {{event.organizerName}}
+</div>
+<div>
+	Event Organizer Contact: {{event.contactOrgnizer}}
+</div>
+<div>
+	Event fee: {{event.entryFees}}
+</div>
+<div>
+	Note from Organizer: {{event.noteFromOrganizer}}
+</div>
+<div>
+	<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="button">
+		Share with Friends
+	</button>&nbsp;&nbsp;
+	<button class="btn" style="background-color: #eae7dc; color: #e98074; margin-right: 15px;" type="button" 
+	(click)="onCancel()">Cancel</button>
+	
+</div>
